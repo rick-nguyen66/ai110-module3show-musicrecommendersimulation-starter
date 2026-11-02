@@ -123,11 +123,15 @@ Because: similar energy
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
+I tested high-energy pop, chill lofi, intense rock, and unusual profiles with
+missing or extreme preferences. Matching genre and mood usually produced the
+highest scores. Users with unknown genres still received useful results from
+mood, energy, valence, and acousticness.
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+I also compared low- and high-energy targets. Low-energy users received
+acoustic and ambient songs, while high-energy users received pop, rock, and
+EDM songs. This showed that the energy gap can change rankings even when no
+exact genre match is available.
 
 ---
 
@@ -148,3 +152,11 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
+This project taught me that a recommender turns user preferences and song
+features into scores, then uses those scores to make predictions. Changing
+one weight can change the order of the recommendations.
+
+I also learned that simple rules can create bias. Exact genre and mood labels
+can favor common styles, while the energy gap can overlook users whose target
+energy is rare in the catalog. More data, diverse recommendations, and
+occasional exploration could make the system fairer and less repetitive.
