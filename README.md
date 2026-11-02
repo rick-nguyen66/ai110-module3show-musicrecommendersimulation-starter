@@ -11,23 +11,19 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
+Real-world recommendation systems combine signals such as user behavior, preferences, and the attributes of each song to predict what someone may enjoy next. Our version focuses on a simple, explainable content-based approach: it compares song features like genre, mood, energy, and tempo with a user's taste profile, then scores and ranks songs by how closely they match.
 
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+The simulation will use a transparent content-based design: each song is represented by descriptive musical features, and the recommender compares those features with the user's preferences. It will calculate a match score for each song and rank the highest-scoring songs as recommendations.
 
-Some prompts to answer:
+The objects will use these features:
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+- `Song`: `id`, `title`, `artist`, `genre`, `mood`, `energy`, `tempo_bpm`, `valence`, `danceability`, and `acousticness`
+- `UserProfile`: preferred `genre`, preferred `mood`, and target values for `energy`, `tempo_bpm`, `valence`, `danceability`, and `acousticness`
 
-You can include a simple diagram or bullet list if helpful.
 
 ---
 
@@ -117,6 +113,5 @@ Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
-
 
 
