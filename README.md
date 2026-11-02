@@ -133,15 +133,7 @@ Use this section to document the experiments you ran. For example:
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+The recommender may create filter bubbles because it heavily prioritizes exact genre and mood matches, while the energy-gap calculation favors songs closest to a user’s target energy and may ignore users whose preferences are uncommon in the catalog. It also uses rigid labels, ignores tempo and danceability, applies a binary acoustic preference, and provides no diversity or exploration mechanism, so users may repeatedly receive similar songs instead of discovering different artists, genres, or moods.
 
 ---
 
