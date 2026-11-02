@@ -92,7 +92,22 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+Top recommendations:
+
+Sunrise City - Score: 74.60
+Because: matching genre, matching mood, similar energy
+
+Gym Hero - Score: 47.40
+Because: matching genre, similar energy
+
+Rooftop Lights - Score: 44.20
+Because: matching mood, similar energy
+
+Night Drive Loop - Score: 19.00
+Because: similar energy
+
+Storm Runner - Score: 17.80
+Because: similar energy
 
 ```
 # e.g.:
