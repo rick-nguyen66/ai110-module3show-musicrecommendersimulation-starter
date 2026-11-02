@@ -25,6 +25,34 @@ The objects will use these features:
 - `UserProfile`: preferred `genre`, preferred `mood`, and target values for `energy`, `tempo_bpm`, `valence`, `danceability`, and `acousticness`
 
 
+## Algorithm Recipe
+
+For each song, calculate a score out of 100:
+
+- Add **30 points** when the song's genre matches the user's favorite genre.
+- Add **25 points** when the song's mood matches the user's favorite mood.
+- Add up to **20 points** for energy similarity:
+  `20 * (1 - abs(song.energy - target_energy))`.
+- Add **15 points** when the song's acousticness matches the user's acoustic
+  preference (acoustic songs have `acousticness >= 0.6`).
+- Add up to **10 points** for valence similarity, using the same normalized
+  difference approach as energy.
+
+Rank all songs by score from highest to lowest and return the top `k` songs.
+The explanation should list the matching features that contributed to each
+recommendation.
+
+### Potential Biases
+
+This approach may favor genres and moods that are more common in the small
+catalog, while underrepresenting less common styles. Because genre and mood
+receive the largest weights, songs with matching labels can outrank songs that
+may be a better overall fit. The system also relies on simplified numerical
+features and does not account for lyrics, culture, language, listening history,
+or the diversity of a user's taste. These limitations can lead to repetitive
+recommendations and should be considered when evaluating the results.
+
+
 ---
 
 ## Getting Started
@@ -74,7 +102,6 @@ Paste a sample of your recommender's output here as a text block so a reader can
 #   2. ...
 #   3. ...
 ```
-
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
 ---
@@ -113,5 +140,4 @@ Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
-
 
